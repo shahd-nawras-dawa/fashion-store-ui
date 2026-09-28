@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>قسم الأزياء النسائية - متجر ألتيمو</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- 1. الترويسة العلوية لصفحة النساء لتفعيل السلة والتنقل -->
+<header class="main-header">
+  <div class="top-bar">
+    <div class="container flex-space">
+      <div class="contact-info">📞 هاتف: 123-456-789</div>
+      <div class="user-menu">
+        <a href="cart.html" class="cart-btn"
+          >🛍️ سلة المشتريات <span class="cart-count">0</span></a
+        >
+      </div>
+    </div>
+  </div>
+  <div class="logo-area container">
+    <h1 class="logo">ultimo <span>women</span></h1>
+  </div>
+</header>
+
+    <div class="shop-layout container">
+      <!-- الشريط الجانبي للفلاتر -->
+      <aside>
+        <h1>قسم تصفية المنتجات</h1>
+        <ul>
+          <li>الفساتين</li>
+          <li>الجواكيت</li>
+          <li>العبايات</li>
+          <li>أحذية وحقائب</li>
+        </ul>
+        <h3>المقاسات</h3>
+        <div class="size-filter">
+          <label for="size-s">size-S</label>
+          <input type="checkbox" id="size-s" value="S" />
+        </div>
+        <div class="size-filter">
+          <label for="size-m">size-M</label>
+          <input type="checkbox" id="size-m" value="M" />
+        </div>
+        <div class="size-filter">
+          <label for="size-l">size-L</label>
+          <input type="checkbox" id="size-l" value="L" />
+        </div>
+      </aside>
+
+      <!-- منطقة عرض المنتجات الرئيسية -->
+      <section>
+        <div class="products-grid">
+          <!-- بطاقة المنتج الأول -->
+          <div class="product-card"  data-category="الفساتين" data-size="S" >
+            <div class="image-container">
+              <img src="images/product1.jpg" alt="فستان صيفي" />
+              <button class="add-to-cart-btn">أضف للسلة 🛒</button>
+              <span class="product-badge">NEW</span>
+              <button class="wishlist-btn">♥</button>
+            </div>
+            <div class="product-info">
+              <h4>فستان صيفي كلاسيكي</h4>
+              <div class="product-stars">★★★★★</div>
+              <p class="product-price">$69.00</p>
+            </div>
+          </div>
+
+          <!-- بطاقة المنتج الثاني -->
+          <div class="product-card"  data-category="الجواكيت" data-size="M">
+            <div class="image-container">
+              <img src="images/product2.jpg" alt="جاكيت عصري" />
+              <button class="add-to-cart-btn">أضف للسلة 🛒</button>
+              <span class="product-badge">SALE</span>
+              <button class="wishlist-btn">♥</button>
+            </div>
+            <div class="product-info">
+              <h4>جاكيت عصري خفيف</h4>
+              <div class="product-stars">★★★★☆</div>
+              <p class="product-price">$89.00</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="link">
+      <a href="./index.html">العودة للواجهة الرئيسية</a>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

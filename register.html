@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنشاء حساب جديد - متجر ألتيمو</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- استدعاء الأيقونات الفخمة للاستخدام إن احتجنا -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body>
+
+    <!-- الحاوية الكبرى التي تجمع النصفين معاً -->
+    <div class="auth-page-container">
+        
+        <!-- 📸 النصف الأيمن: قسم الصورة الفخمة ذات الحواف الناعمة -->
+        <div class="auth-image-side">
+            <div class="image-overlay">
+                <h2>اكتشف أحدث صيحات الموضة</h2>
+                <p>انضم إلينا اليوم واستمتع بتجربة تسوق حصرية ومخصصة لك.</p>
+            </div>
+        </div>
+
+        <!-- ✍️ النصف الأيسر: قسم نموذج إدخال البيانات (الفورم) -->
+        <div class="auth-form-side">
+            <form class="modern-auth-form">
+                <h1>إنشاء حساب جديد</h1>
+                <p class="form-subtitle">يرجى إدخال بياناتك لإنشاء حسابك في متجر ألتيمو</p>
+
+                <div class="input-group">
+                    <label>الاسم الكامل</label>
+                    <input type="text" name="username" placeholder="أدخل اسمك الثلاثي" required>
+                </div>
+
+                <div class="input-group">
+                    <label>البريد الإلكتروني</label>
+                    <input type="email" name="user_email" placeholder="example@mail.com" required>
+                </div>
+
+                <div class="input-group">
+                    <label>كلمة المرور</label>
+                    <input type="password" name="user_password" maxlength="20" minlength="10" placeholder="••••••••••••" required>
+                </div>
+
+                <input type="submit" value="إنشاء الحساب الآن">
+
+                <div class="modern-auth-links">
+                    <a href="login.html" class="switch-link">لديك حساب بالفعل؟ <span>سجل دخولك الآن</span></a>
+                    <a href="index.html" class="back-home">🏠 العودة للصفحة الرئيسية للمتجر</a>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+
+
+    <!-- 🔐 كود التحقق الذكي والمحمي من حقول إنشاء الحساب الجديد -->
+    <script>
+        // 1. الإمساك بـ فورم التسجيل باستخدام الكلاس الخاص به
+        const registerForm = document.querySelector('.modern-auth-form form');
+
+        if (registerForm) {
+            // 2. التصنت لحدث "الإرسال" (submit) عندما تضغط المشتري على زر إنشاء الحساب
+            registerForm.addEventListener('submit', function(event) {
+                
+                // 3. الإمساك بصناديق الإدخال (الاسم، البريد، وكلمة المرور)
+                const nameInput = registerForm.querySelector('input[type="text"]');
+                const emailInput = registerForm.querySelector('input[type="email"]');
+                const passwordInput = registerForm.querySelector('input[type="password"]');
+
+                // 4. استخراج القيم المكتوبة وتنظيف الفراغات الجانبية (.trim)
+                const nameValue = nameInput ? nameInput.value.trim() : "";
+                const emailValue = emailInput ? emailInput.value.trim() : "";
+                const passwordValue = passwordInput ? passwordInput.value : "";
+
+                // 5. الفحص المنطقي الحامي:
+                // هل حقل الاسم أو البريد فارغ؟ أو كلمة المرور قصيرة (أقل من 6 أحرف)؟
+                if (nameValue === "" || emailValue === "" || passwordValue === "" || passwordValue.length < 6) {
+                    
+                    // منع المتصفح من إرسال البيانات وإيقاف تحديث الصفحة
+                    event.preventDefault(); 
+                    
+                    // تنبيه المستخدم بالخطأ
+                    alert("❌ خطأ: يرجى ملء جميع الحقول، وتأكدي أن كلمة المرور لا تقل عن 6 أحرف!");
+                }
+            });
+        }
+    </script>
+</body>
+
+
+</body>
+</html>

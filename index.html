@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>متجر ألتيمو للملابس - نسختي الاحترافية الأولى</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- رابط الأيقونات الاحترافية الجديد -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  </head>
+
+  <body>
+    <!-- 1. قسم الترويسة العلوية للمتجر (Header) -->
+    <header class="main-header">
+      <div class="top-bar">
+        <div class="container flex-space">
+          <div class="contact-info">📞 123-456-789</div>
+          <div class="user-menu">
+            <a href="login.html" class="auth-btn btn-login">تسجيل الدخول</a>
+            <span class="divider">|</span>
+            <a href="register.html" class="auth-btn btn-register">إنشاء حساب</a>
+            <a href="cart.html" class="cart-btn"
+              >🛍️ سلة المشتريات <span class="cart-count">0</span></a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="logo-area container">
+        <h1 class="logo">ultimo <span>theme</span></h1>
+        <form class="search-form" >
+          <input type="text" name="" id="" placeholder="search">
+          <input type="submit" value=" 🔍">
+        </form>
+      </div>
+
+      <nav class="main-nav">
+        <div class="container">
+          <ul class="nav-links">
+            <li><a href="#" class="active">الرئيسية</a></li>
+            <li><a href="./women.html">النساء</a></li>
+            <li><a href="#">الموضة</a></li>
+            <li><a href="#">الإلكترونيات</a></li>
+            <li><a href="#">المنتجات الرقمية</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- 2. القسم الإعلاني البطولي (Hero Section) -->
+    <section class="hero-section container">
+      <!-- قراءة الصورة الخلفية محلياً لمنع الاختفاء -->
+      <div
+        class="hero-main"
+        style="
+          background-image:
+            linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)),
+            url(&quot;images/hero-bg.jpg&quot;);
+        "
+      >
+        <div class="hero-text">
+          <h2>Responsive Design</h2>
+          <p>
+            هذا القالب يتكيف تلقائياً مع جميع شاشات الهواتف والأجهزة الذكية.
+          </p>
+        </div>
+      </div>
+      <div class="hero-side">
+        <div class="side-banner banner-1">شراء هذا القالب</div>
+        <div class="side-banner banner-2">مشاهدة العروض</div>
+        <div class="side-banner banner-3">تحميل الملحقات</div>
+      </div>
+    </section>
+
+    <!-- 3. قسم ميزات المتجر الثلاثية -->
+    <section class="features-section container">
+      <div class="feature-box">
+        <div class="icon">🎨</div>
+        <h3>ألوان غير محدودة</h3>
+        <p>خيارات سهلة لتغيير ألوان كل عنصر في الموقع بنقرة واحدة.</p>
+      </div>
+      <div class="feature-box">
+        <div class="icon">📱</div>
+        <h3>تصميم متجاوب</h3>
+        <p>يعمل بسلاسة على الكمبيوتر, التابلت، والهواتف المحمولة.</p>
+      </div>
+      <div class="feature-box">
+        <div class="icon">📋</div>
+        <h3>قائمة ضخمة</h3>
+        <p>قائمة علوية متطورة لعرض الفئات والصور بشكل منظم.</p>
+      </div>
+    </section>
+
+    <!-- 4. شبكة عرض المنتجات المميزة (Our Featured Products) -->
+    <main class="container">
+      <h2 class="section-title">منتجاتنا المميزة</h2>
+      <div class="products-grid">
+        <!-- بطاقة المنتج الأول -->
+        <div class="product-card">
+          <div class="image-container">
+            <img src="images/product1.jpg" alt="فستان صيفي" />
+            <button class="add-to-cart-btn">أضف للسلة 🛒</button>
+               <span class="product-badge">NEW</span>
+                <button class="wishlist-btn">❤️</button>
+          </div>
+          <div class="product-info">
+            <h4>فستان صيفي كلاسيكي</h4>
+            <div class="product-stars">★★★★★</div>
+            <p class="product-price">$69.00</p>
+             
+          </div>
+        </div>
+
+        <!-- بطاقة المنتج الثاني -->
+        <div class="product-card">
+          <div class="image-container">
+            <img src="images/product2.jpg" alt="جاكيت عصري" />
+            <button class="add-to-cart-btn">أضف للسلة 🛒</button>
+             <span class="product-badge">NEW</span>
+                <button class="wishlist-btn">❤️</button>
+          </div>
+          <div class="product-info">
+            <h4>جاكيت عصري خفيف</h4>
+            <div class="product-stars">★★★★☆</div>
+            <p class="product-price">$89.00</p>
+          </div>
+        </div>
+
+        <!-- بطاقة المنتج الثالث -->
+        <div class="product-card">
+          <div class="image-container">
+            <img src="images/product3.jpg" alt="طقم شبابي" />
+            <button class="add-to-cart-btn">أضف للسلة 🛒</button>
+          </div>
+          <div class="product-info">
+            <h4>طقم شبابي متكامل</h4>
+            <div class="product-stars">★★★★★</div>
+            <p class="product-price">$120.00</p>
+             <span class="product-badge">SALE</span>
+                <button class="wishlist-btn">❤️</button>
+          </div>
+        </div>
+
+        <!-- بطاقة المنتج الرابع -->
+        <div class="product-card">
+          <div class="image-container">
+            <img src="images/product5.jpg" alt="بلوزة شتوية" />
+            <button class="add-to-cart-btn">أضف للسلة 🛒</button>
+              <span class="product-badge">SALE</span>
+                <button class="wishlist-btn">❤️</button>
+          </div>
+          <div class="product-info">
+            <h4>بلوزة شتوية ناعمة</h4>
+            <div class="product-stars">★★★☆☆</div>
+            <p class="product-price">$45.00</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- 5. قسم تذييل الصفحة الاحترافي المطور (Mega Footer) -->
+    <footer class="main-footer">
+      <div class="footer-container container">
+        <!-- العمود الأول: عن المتجر -->
+        <div class="footer-column">
+          <h3>عن متجر ألتيمو</h3>
+          <p>
+            وجهتكم الأولى لأحدث صيحات الموضة والملابس العصرية. جودة عالية
+            وتصاميم تناسب جميع الأذواق.
+          </p>
+          <div class="social-icons">
+    <a href="#" style="color: #1877f2; font-size: 20px; margin: 0 8px;"><i class="fa-brands fa-facebook"></i></a>
+    <a href="#" style="color: #c13584; font-size: 20px; margin: 0 8px;"><i class="fa-brands fa-instagram"></i></a>
+    <a href="#" style="color: #1da1f2; font-size: 20px; margin: 0 8px;"><i class="fa-brands fa-twitter"></i></a>
+</div>
+
+        </div>
+
+        <!-- العمود الثاني: روابط سريعة للمساعدة -->
+        <div class="footer-column">
+          <h3>روابط تهمك</h3>
+          <ul class="footer-links">
+            <li><a href="#">سياسة الشحن والتوصيل</a></li>
+            <li><a href="#">الاستبدال والاسترجاع</a></li>
+            <li><a href="#">من نحن</a></li>
+            <li><a href="#">اتصل بنا</a></li>
+          </ul>
+        </div>
+
+        <!-- العمود الثالث: طرق الدفع -->
+        <div class="footer-column">
+          <h3>طرق الدفع الآمنة</h3>
+          <p>نوفر لكم خيارات دفع متعددة ومحمية لتجربة تسوق مريحة.</p>
+         <div class="payment-methods" style="font-size: 24px; color: #ffffff; display: flex; gap: 15px; margin-top: 10px;">
+    <i class="fa-brands fa-cc-visa" style="color: #1a1f71;"></i>
+    <i class="fa-brands fa-cc-mastercard" style="color: #eb001b;"></i>
+    <i class="fa-brands fa-cc-apple-pay" style="color: #ffffff;"></i>
+    <i class="fa-solid fa-money-bill-wave" style="color: #2ecc71;" title="الدفع عند الاستلام"></i>
+</div>
+
+        </div>
+      </div>
+
+      <!-- شريط الحقوق السفلي المنفصل -->
+      <div class="footer-bottom">
+        <p>حقوق النشر © 2026 متجر ألتيمو. جميع الحقوق محفوظة.</p>
+      </div>
+    </footer>
+    <script src="main.js"></script>
+
+  </body>
+</html>

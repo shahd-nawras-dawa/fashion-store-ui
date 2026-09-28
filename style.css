@@ -1,0 +1,880 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: #2d2d2d;
+  line-height: 1.6;
+}
+
+.container {
+  width: 92%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.flex-space {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 1. تنسيق الترويسة (Header) */
+
+/* 1. تنسيق الترويسة العلوية الفخمة والمطورة */
+.top-bar {
+  background-color: #ffffff; /* جعل الخلفية بيضاء ناصعة لفخامة أكبر */
+  font-size: 13px; /* تكبير الخط قليلاً لسهولة القراءة */
+  padding: 15px 0; /* زيادة المساحة العمودية ليعطي مظهر المتاجر العالمية */
+  border-bottom: 1px solid #f0f0f0; /* خط فاصل رمادي ناعم جداً */
+  color: #555555;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02); /* ظل ناعم غير ملحوظ لإعطاء عمق */
+}
+
+/* تنسيق منطقة أزرار المستخدم */
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* مسافات متساوية بين الأزرار */
+}
+
+/* تنسيق الروابط العامة للدخول والتسجيل */
+.user-menu .auth-btn {
+  text-decoration: none;
+  color: #555555;
+  padding: 6px 14px;
+  border-radius: 20px; /* حواف دائرية أنيقة جداً */
+  background-color: #f8f9fa; /* خلفية رمادية ناعمة */
+  font-weight: 600;
+  transition: all 0.3s ease; /* حركة سلسة عند التفاعل */
+}
+
+/* تأثير مرور الماوس على أزرار الدخول والتسجيل */
+.user-menu .auth-btn:hover {
+  background-color: #e02b7f; /* تنقلب الخلفية للون الفوشيا المميز للمتجر */
+  color: #ffffff; /* ينقلب النص للأبيض */
+}
+
+/* الفاصل العمودي الصغير */
+.user-menu .divider {
+  color: #dddddd;
+  font-size: 11px;
+}
+
+/* تنسيق زر سلة المشتريات الفخم */
+.user-menu .cart-btn {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #2d2d2d; /* خلفية داكنة متناسقة مع التيمة */
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.3s ease;
+}
+
+/* تأثير الماوس على السلة */
+.user-menu .cart-btn:hover {
+  background-color: #e02b7f; /* تتوهج باللون الفوشيا عند الرغبة بالشراء */
+}
+
+/* دائرة عداد المنتجات داخل السلة */
+.user-menu .cart-count {
+  background-color: #e02b7f;
+  color: #ffffff;
+  font-size: 13px;
+  padding: 2px 7px;
+  border-radius: 50%; /* جعل العداد دائري تماماً */
+  font-weight: bold;
+}
+
+/* تنسيق وتحسين رقم الهاتف بأقصى اليمين */
+.contact-info {
+  font-size: 14px; /* تكبير الخط ليصبح واضحاً */
+  font-weight: 600; /* خط شبه عريض لفخامة أكبر */
+  color: #2d2d2d; /* اللون الداكن المتناسق مع هوية المتجر */
+  display: flex;
+  align-items: center;
+  gap: 5px; /* مسافة صغيرة بين الإيموجي والرقم */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* تأثير تحويم الفأرة على رقم الهاتف */
+.contact-info:hover {
+  color: #e02b7f; /* يتحول للون الفوشيا التفاعلي لجذب العين */
+}
+
+.logo-area {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 20px 0;
+}
+
+.logo {
+  font-size: 36px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #2d2d2d;
+  letter-spacing: 2px;
+}
+
+.logo span {
+  color: #e02b7f;
+  font-weight: 300;
+}
+
+.main-nav {
+  background-color: #2d2d2d;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li a {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 16px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  background-color: #e02b7f;
+}
+
+/* 2. تنسيق القسم البطولي (Hero Section) */
+.hero-section {
+  display: flex;
+  gap: 20px;
+  margin: 25px auto;
+}
+
+.hero-main {
+  flex: 3;
+  height: 420px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+  display: flex;
+  align-items: flex-end;
+  padding: 35px;
+}
+
+.hero-text {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 25px;
+  border-right: 5px solid #e02b7f;
+  max-width: 480px;
+  border-radius: 0 4px 4px 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero-text h2 {
+  font-size: 28px;
+  color: #2d2d2d;
+  margin-bottom: 8px;
+}
+
+.hero-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.side-banner {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #333333;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #e0e0e0;
+}
+
+.banner-1 {
+  background-color: #f9f9f9;
+}
+.banner-2 {
+  background-color: #f1f1f1;
+}
+.banner-3 {
+  background-color: #e9e9e9;
+}
+
+.side-banner:hover {
+  transform: translateX(-5px);
+  border-color: #e02b7f;
+  color: #e02b7f;
+}
+
+/* 3. أقسام الميزات الثلاثية */
+.features-section {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 45px;
+}
+
+.feature-box {
+  flex: 1;
+  background: #ffffff;
+  padding: 25px;
+  text-align: center;
+  border: 1px solid #eaeaea;
+  border-radius: 4px;
+  transition: box-shadow 0.3s;
+}
+
+.feature-box:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.feature-box .icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.feature-box h3 {
+  color: #2d2d2d;
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.feature-box p {
+  font-size: 14px;
+  color: #777777;
+}
+
+/* 4. شبكة المنتجات وتأثيرات الحوّم التفاعلية */
+.section-title {
+  font-size: 22px;
+  margin-bottom: 25px;
+  color: #2d2d2d;
+  border-bottom: 2px solid #2d2d2d;
+  padding-bottom: 8px;
+  display: inline-block;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-bottom: 60px;
+}
+
+.product-card {
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+  background-color: #f5f5f5;
+}
+.product-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #e02b7f;
+  color: #ffffff;
+  padding: 4px 10px;
+  font-weight: bold;
+  font-size: 12px;
+  border-radius: 4px; /* تدوير الزوايا */
+  border: 1px solid #ffffff; /* الحد الأبيض المقترح لحماية التباين */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* الظل الناعم الاحترافي */
+  cursor: pointer;
+  user-select: none;
+}
+.wishlist-btn {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+.wishlist-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.add-to-cart-btn {
+  position: absolute;
+  bottom: -60px;
+  left: 15px;
+  right: 15px;
+  background-color: #e02b7f;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 4px;
+  font-size: 14px;
+}
+.product-info {
+  padding: 15px;
+}
+.product-info h4 {
+  font-size: 15px;
+  color: #333333;
+  margin-bottom: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.product-stars {
+  color: #f39c12;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+.product-price {
+  color: #e02b7f;
+  font-weight: 700;
+  font-size: 17px;
+}
+/* تأثيرات الـ Hover */
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+.product-card:hover .image-container img {
+  transform: scale(1.06);
+}
+.product-card:hover .add-to-cart-btn {
+  bottom: 15px;
+  opacity: 1;
+}
+/* ==========================================================================
+   5. تنسيق التذييل الاحترافي المطور (Mega Footer Style)
+   ========================================================================== */
+
+/* الحاوية الكبرى للـ Footer بالكامل */
+.main-footer {
+  background-color: #2d2d2d; /* اللون الرمادي الداكن الفخم المعتمد للمتجر */
+  color: #b0b0b0; /* لون نصوص الوصف الرمادي الفاتح المريح للعين */
+  padding: 50px 0 0 0; /* مسافة داخلية علوية كبيرة ليتنفس المحتوى */
+  font-size: 14px;
+}
+
+/* حاوية الأعمدة الثلاثة الداخلية */
+.footer-container {
+  display: flex; /* السحر هنا: تصفّ الأعمدة الثلاثة بجانب بعضها أفقياً */
+  justify-content: space-between; /* توزيع الأعمدة بحيث تترك مسافات متساوية بينها */
+  gap: 40px; /* مسافة أمان لمنع التصاق الأعمدة ببعضها */
+  margin-bottom: 40px; /* مسافة أسفل الأعمدة قبل شريط الحقوق */
+}
+
+/* تنسيق العمود الفردي المشترك */
+.footer-column {
+  flex: 1; /* تجعل الأعمدة الثلاثة تتشارك المساحة بالتساوي تماماً */
+}
+
+/* عناوين الأعمدة داخل التذييل */
+.footer-column h3 {
+  color: #ffffff; /* لون العنوان أبيض ناصع ليبرز */
+  font-size: 16px;
+  margin-bottom: 20px; /* مسافة أسفل العنوان قبل النصوص أو الروابط */
+  border-bottom: 2px solid #e02b7f; /* خط فوشيا صغير ومميز أسفل كل عنوان يعكس الهوية */
+  padding-bottom: 8px;
+  display: inline-block; /* يجعل الخط الفوشيا على مقاس الكلمة فقط وليس بعرض العمود */
+}
+
+/* تنسيق الوصف النصي داخل الأعمدة */
+.footer-column p {
+  line-height: 1.8; /* تباعد الأسطر لراحة العين أثناء القراءة */
+}
+
+/* تنسيق قائمة الروابط السريعة (العمود الأوسط) */
+.footer-links {
+  list-style: none; /* إزالة النقاط الافتراضية للقائمة */
+}
+
+.footer-links li {
+  margin-bottom: 10px; /* مسافة صغيرة بين كل رابط ورابط */
+}
+
+.footer-links li a {
+  color: #b0b0b0;
+  text-decoration: none; /* إزالة الخط السفلي للروابط */
+  transition: color 0.3s ease; /* حركة ناعمة عند تفاعل الماوس */
+}
+
+/* عند تحويم الفأرة فوق الروابط السريعة */
+.footer-links li a:hover {
+  color: #e02b7f; /* يتوهج الرابط باللون الفوشيا لجذب العين */
+  padding-right: 5px; /* إزاحة ذكية جداً لليسار تعطي إيحاء بالحركة والتفاعل */
+}
+
+/* تنسيق أيقونات التواصل وطرق الدفع */
+.social-icons,
+.payment-methods {
+  margin-top: 15px;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.03
+  ); /* خلفية داكنة جداً وشفافة لإبراز الأيقونات */
+  padding: 10px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+/* --------------------------------------------------------------------------
+   شريط الحقوق السفلي المنفصل تماماً (Footer Bottom)
+   -------------------------------------------------------------------------- */
+.footer-bottom {
+  background-color: #1e1e1e; /* درجة أغمق من الرمادي لفصل الحقوق بصرياً */
+  text-align: center; /* توسيط نص الحقوق في المنتصف */
+  padding: 20px 0; /* مسافة داخلية مريحة */
+  border-top: 1px solid #3d3d3d; /* خط رمادي خفيف جداً للفصل */
+  font-size: 13px;
+}
+
+/* --------------------------------------------------------------------------
+   تجاوب الـ Footer مع الشاشات الصغيرة والهواتف (Responsive Footer)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column; /* عند تصفح الموبايل، تتحول الأعمدة أفقياً لتترتب عمودياً */
+    gap: 30px;
+    text-align: center; /* توسيط كافة النصوص لتبدو متناسقة على الهاتف */
+  }
+
+  .footer-column h3 {
+    display: block; /* جعل الخط الفوشيا يتوسط العمود في الموبايل */
+    width: max-content;
+    margin: 0 auto 15px auto;
+  }
+}
+
+/* 6. الشاشات المتجاوبة */
+@media (max-width: 992px) {
+  .hero-section {
+    flex-direction: column;
+  }
+  .hero-side {
+    flex-direction: row;
+    height: 80px;
+  }
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 650px) {
+  .nav-links {
+    flex-direction: column;
+    text-align: center;
+  }
+  .nav-links li a {
+    padding: 12px;
+  }
+  .features-section {
+    flex-direction: column;
+  }
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-main {
+    height: 280px;
+    padding: 15px;
+  }
+  .hero-text h2 {
+    font-size: 22px;
+  }
+}
+
+/* ==========================================================================
+   🔐 6. تصميم واجهات نظام النصفين المطورة (Modern Split-Screen Layout)
+   ========================================================================== */
+
+/* الحاوية الكبرى التي تحتل كامل الشاشة وتلغي الهوامش */
+.auth-page-container {
+  display: flex; /* تصف النصفين (الصورة والفورم) بجانب بعضهما */
+  min-height: 100vh; /* تجعل الحاوية تأخذ كامل ارتفاع شاشة العرض */
+  background-color: #f8f9fa; /* خلفية رمادية ناعمة جداً للموقع */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 📸 أولاً: تنسيق النصف الأيمن (قسم الصورة المحلية) */
+.auth-image-side {
+  flex: 1; /* يأخذ نصف الشاشة تماماً (50%) */
+  background-image: url("images/auth-bg.jpg"); /* 🌟 هنا استدعينا صورتكِ المحلية بنجاح */
+  background-size: cover; /* جعل الصورة تمتد لتغطي كامل المساحة دون تشويه */
+  background-position: center; /* تجميد مركز الصورة في المنتصف */
+  position: relative;
+  display: flex;
+  align-items: flex-end; /* إنزال النصوص المكتوبة فوق الصورة لأسفل الكارت */
+  padding: 50px;
+  margin: 20px; /* ترك هامش أمان خارجي حول الصورة */
+  border-radius: 20px; /* ✨ الحواف الدائرية الفخمة والناعمة التي طلبتِها */
+  overflow: hidden; /* قص أي أجزاء حادة من الصورة لمنحها المظهر الدائري */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* ظل ناعم خلف كارت الصورة يعطي عمقاً */
+}
+
+/* طبقة التظليل الشفافة فوق الصورة لضمان وضوح النصوص البيضاء */
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.6)
+  ); /* تدرج أسود شفاف */
+  z-index: 1;
+}
+
+/* نصوص الترحيب المكتوبة فوق الصورة */
+.auth-image-side h2,
+.auth-image-side p {
+  position: relative;
+  z-index: 2; /* رفع النصوص فوق طبقة التظليل لتبرز */
+  color: #ffffff; /* نص أبيض ناصع وواضح */
+}
+
+.auth-image-side h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.auth-image-side p {
+  font-size: 16px;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* ✍️ ثانياً: تنسيق النصف الأيسر (قسم نموذج المدخلات والفورم) */
+.auth-form-side {
+  flex: 1; /* يأخذ النصف الآخر من الشاشة تماماً (50%) */
+  display: flex;
+  align-items: center; /* توسيط الفورم عمودياً في نصف الشاشة */
+  justify-content: center; /* توسيط الفورم أفقياً في نصف الشاشة */
+  padding: 40px;
+}
+
+/* صندوق الفورم الفعلي الاحترافي */
+.modern-auth-form {
+  width: 100%;
+  max-width: 420px; /* عرض مثالي ومريح ومحدد للفورم */
+}
+
+.modern-auth-form h1 {
+  font-size: 28px;
+  color: #2d2d2d; /* رمادي داكن مطابق لهوية المتجر */
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.form-subtitle {
+  color: #777777; /* لون رمادي متوسط للوصف الفرعي */
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+/* حاوية الحقول (الاسم، البريد، كلمة المرور) */
+.input-group {
+  display: flex;
+  flex-direction: column; /* رص تسمية الحقل فوق صندوق الكتابة عمودياً */
+  gap: 8px; /* مسافة صغيرة بين التسمية والصندوق */
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #444444;
+}
+
+/* تنسيق صناديق الإدخال الحديثة */
+.modern-auth-form input[type="text"],
+.modern-auth-form input[type="email"],
+.modern-auth-form input[type="password"] {
+  width: 100%;
+  padding: 14px 16px; /* مساحة داخلية مريحة للكتابة */
+  border: 1px solid #e0e0e0; /* إطار ناعم وخفيف */
+  border-radius: 8px; /* تدوير الحواف بالتناسق مع التصميم */
+  font-size: 15px;
+  background-color: #ffffff;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* تأثير متطور جداً عند ضغط المشتري داخل صندوق الكتابة (Focus) */
+.modern-auth-form input[type="text"]:focus,
+.modern-auth-form input[type="email"]:focus,
+.modern-auth-form input[type="password"]:focus {
+  border-color: #e02b7f; /* يتحول الإطار للون الفوشيا الجذاب */
+  box-shadow: 0 0 0 4px rgba(224, 43, 127, 0.1); /* توهج فوشيا ناعم وخلفي */
+}
+
+/* تنسيق زر الإرسال الرئيسي الفوشيا الفخم */
+.modern-auth-form input[type="submit"] {
+  width: 100%;
+  background-color: #e02b7f; /* اللون الفوشيا الأساسي للمتجر */
+  color: #ffffff;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.modern-auth-form input[type="submit"]:hover {
+  background-color: #bd1e66; /* درجة أغمق تعطي إيحاء بالضغط */
+}
+
+/* تحسين وتنسيق روابط التنقل السفلية */
+.modern-auth-links {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: center;
+}
+
+.modern-auth-links a {
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.switch-link {
+  color: #666666;
+}
+.switch-link span {
+  color: #e02b7f;
+  font-weight: bold;
+}
+.switch-link:hover span {
+  text-decoration: underline;
+}
+
+.back-home {
+  color: #777777;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.back-home:hover {
+  color: #2d2d2d;
+}
+
+/* 📱 شاشات الهواتف الذكية المريحة (تجاوب كامل) */
+@media (max-width: 850px) {
+  .auth-image-side {
+    display: none; /* إخفاء نصف الصورة تماماً في الموبايل لتوفير المساحة */
+  }
+  .auth-form-side {
+    flex: 1; /* يجعل الفورم يحتل كامل مساحة شاشة الموبايل */
+    padding: 20px;
+  }
+}
+.search-form {
+  display: flex;
+  width: 100%;
+  max-width: 450px;
+  border-radius: 30px;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+}
+.search-form input[type="text"] {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 12px 20px;
+  font-size: 14px;
+}
+.search-form input[type="submit"]{
+  padding: 0 20px;
+  background-color: #e02b7f;
+  color: #dddddd;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.search-form input[type="submit"]:hover{
+  background-color: #bd1e66;
+}
+
+/* ==========================================================================
+   📐 هندسة توزيع وتجاوب صفحة القسم النسائي (Women Shop Layout)
+   ========================================================================== */
+
+/* الحاوية الكبرى التي تجمع الفلاتر والمنتجات بنظام مرن */
+body{
+  background-color: #f8f9fa;
+}
+.shop-layout {
+  display: flex;         /* تفعيل قوة النظام المرن لصف الأبناء أفقياً بجانب بعضهم */
+  gap: 30px;             /* مسافة أمان وفجوة ناعمة بمقدار 30 بكسل تمنع التصاق الأقسام */
+  margin-top: 30px;      /* مسافة علوية ليفصل القسم عن القائمة العلوية للمتجر */
+  margin-bottom: 60px;   /* مسافة سفلية مريحة ليفصل القسم عن الفوتر المطور */
+}
+
+/* 📊 أولاً: توزيع الأوزان والأبعاد الذكية على شاشات الكمبيوتر الكبيرة */
+
+/* شريط الفلاتر الجانبي */
+.shop-layout aside {
+  flex: 1;               /* حجز جزء واحد من المساحة (ما يعادل 25% هندسياً من العرض) */
+  background-color: #f9f9f9; /* خلفية رمادية ناعمة جداً لتمييز الفلاتر بصرياً */
+  padding: 20px;         /* حشو داخلي مريح لتبتعد النصوص عن إطار الحاوية */
+  border-radius: 8px;    /* تدوير ناعم للحواف يتماشى مع فخامة الهوية البصرية */
+  height: max-content;   /* جعل ارتفاع الحاوية يلتزم بمقدار محتواها الداخلي فقط */
+transition: all 0.3s ease;
+}
+
+
+.shop-layout aside ul li{
+  list-style: none;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.shop-layout aside ul li:hover{
+  cursor: pointer;
+  background-color: #e02b7f;
+  padding-right: 8px;
+  color: #ffffff;
+}
+
+/* منطقة عرض شبكة المنتجات النسائية */
+.shop-layout section {
+  flex: 3;               /* حجز 3 أجزاء من المساحة (ما يعادل 75% هندسياً لراحة المنتجات) */
+}
+
+/* 📱 ثانياً: معايير التجاوب الكامل لحماية التصميم على شاشات الهواتف (Media Queries) */
+@media (max-width: 768px) {
+  .shop-layout {
+    flex-direction: column; /* 🌟 السحر هنا: قلب التوزيع من أفقي إلى عمودي ليتناسب مع الهاتف */
+    gap: 20px;              /* تقليص الفجوة قليلاً لتوفير مساحة على شاشات الموبايل */
+  }
+
+  /* جعل الفلاتر والمنتجات تحتل كامل عرض شاشة الموبايل بأريحية */
+  .shop-layout aside,
+  .shop-layout section {
+    flex: none;             /* إلغاء نظام الأوزان الأفقي السابق */
+    width: 100%;            /* إجبار الحاويات على أخذ العرض الكامل للشاشة الذكية */
+  }
+}
+/* تنسيق حقول المقاسات كأزرار أنيقة ومصطفة أفقياً */
+.size-filter {
+  display: inline-flex;   /* 🌟 السحر هنا: يجعل الأزرار تصطف بجانب بعضها أفقياً تلقائياً وبدون حاويات زائدة */
+  align-items: center;    /* توسيط الكلمة والمربع عمودياً داخل الزر */
+  gap: 8px;               /* مسافة صغيرة بين النص والمربع */
+  background-color: #ffffff; /* خلفية بيضاء لزر المقاس */
+  border: 1px solid #e0e0e0; /* إطار خفيف وناعم يحدد شكل الزر */
+  padding: 6px 14px;      /* مساحة داخلية مريحة لتسهيل ضغط الإصبع على الهاتف */
+  border-radius: 20px;    /* حواف دائرية أنيقة تماشي هوية المتجر */
+  margin: 5px;            /* مسافة أمان صغيرة بين كل زر وزر */
+  cursor: pointer;        /* تحويل المؤشر لشكل اليد التفاعلية */
+  transition: all 0.3s ease; /* نعومة الحركة عند التفاعل */
+}
+
+/* تأثير مرور الماوس على زر المقاس */
+.size-filter:hover {
+  border-color: #e02b7f;  /* يتحول الإطار للون الفوشيا الجذاب */
+  color: #e02b7f;         /* يتوهج النص باللون الفوشيا */
+  transform: translateY(-2px); /* رفعة خفيفة جداً للأعلى لإيحاء التفاعل */
+}
+
+/* ----------------------------------------------------
+   🔗 تنسيق زر العودة السريعة للواجهة الرئيسية
+   ---------------------------------------------------- */
+.link {
+  text-align: center;      /* توسيط الحاوية في منتصف الصفحة تماماً */
+  margin-top: 40px;        /* ترك مسافة علوية مريحة تحت المنتجات */
+  margin-bottom: 20px;     /* مسافة أمان سفلية قبل الفوتر */
+}
+
+.link a {
+  display: inline-block;   /* تحويل الرابط لكتلة مرنة تقبل الحشو والأبعاد */
+  text-decoration: none;   /* إزالة الخط السفلي التقليدي المزعج للروابط */
+  background-color: #2d2d2d; /* الخلفية الداكنة الفخمة المعتمدة لهوية المتجر */
+  color: #ffffff;          /* لون النص أبيض ناصع وواضح */
+  padding: 12px 30px;      /* مساحة داخلية مريحة جداً لسهولة ضغط الإصبع على الهاتف */
+  border-radius: 25px;     /* حواف دائرية أنيقة تماشي أزرار السلة والحساب */
+  font-weight: bold;       /* خط عريض لإبراز الكلمة للزبون */
+  font-size: 14px;         /* الحجم المثالي والمريح للقراءة */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* ظل رمادي خفيف غير ملحوظ يعطي عمقاً */
+  transition: all 0.3s ease; /* نعومة حركية زمنية مدتها 0.3 ثانية لكافة التأثيرات */
+}
+
+/* تأثير تحويم الفأرة (Hover) على زر العودة */
+.link a:hover {
+  background-color: #e02b7f; /* تنقلب الخلفية للون الفوشيا التفاعلي لجذب العين */
+  transform: translateY(-3px); /* رفعة ناعمة جداً للأعلى تعطي إيحاء بالارتفاع */
+  box-shadow: 0 6px 15px rgba(224, 43, 127, 0.2); /* زيادة توهج الظل باللون الفوشيا عند التفاعل */
+}
+
+
+
+
+
+
+/* 🔔 تنسيق الإشعار المنبثق الفخم للمتجر */
+.custom-toast {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background: rgba(224, 43, 127, 0.95); /* لون فوشيا زجاجي */
+    color: #ffffff;
+    padding: 15px 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.custom-toast.show {
+    transform: translateY(0);
+    opacity: 1;
+}

@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>سلة المشتريات - متجر ألتيمو</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* تنسيقات واجهة السلة الاحترافية المتجاوبة */
+      .cart-page {
+        display: flex;
+        gap: 30px;
+        margin: 40px auto;
+        flex-wrap: wrap;
+      }
+      .cart-table-container {
+        flex: 2;
+        min-width: 320px;
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid #eeeeee;
+      }
+      .cart-summary {
+        flex: 1;
+        min-width: 300px;
+        background: #f9f9f9;
+        padding: 25px;
+        border-radius: 8px;
+        border: 1px solid #e0e0e0;
+        height: max-content;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: right;
+        margin-top: 15px;
+      }
+      th,
+      td {
+        padding: 15px;
+        border-bottom: 1px solid #eeeeee;
+        vertical-align: middle;
+      }
+      th {
+        background-color: #2d2d2d;
+        color: white;
+        font-size: 14px;
+      }
+      .cart-img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+      }
+      .remove-btn {
+        background: #ff4d4d;
+        color: white;
+        border: none;
+        padding: 8px 14px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background 0.2s;
+      }
+      .remove-btn:hover {
+        background: #cc0000;
+      }
+      .checkout-btn {
+        width: 100%;
+        background: #e02b7f;
+        color: white;
+        border: none;
+        padding: 14px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 15px;
+        transition: background 0.2s;
+      }
+      .checkout-btn:hover {
+        background: #bd1e66;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- الترويسة العلوية للسلة -->
+    <header class="main-header">
+      <div class="logo-area container">
+        <h1 class="logo">ultimo <span>theme</span></h1>
+        <div class="contact-info">
+          🛒 سلة المشتريات (<span class="cart-count">0</span>)
+        </div>
+      </div>
+    </header>
+
+    <main class="container cart-page">
+      <!-- جدول المنتجات -->
+      <div class="cart-table-container">
+        <h2>المنتجات المضافة</h2>
+        <table id="cart-table">
+          <thead>
+            <tr>
+              <th>المنتج</th>
+              <th>الاسم</th>
+              <th>المقاس</th>
+              <th>السعر</th>
+              <th>إجراء</th>
+            </tr>
+          </thead>
+
+          <tbody id="cart-items-tbody">
+            <!-- الصفوف سيتم حقنها هنا تلقائياً -->
+          </tbody>
+        </table>
+        <div
+          id="empty-cart-message"
+          style="
+            display: none;
+            text-align: center;
+            padding: 40px;
+            font-size: 18px;
+            color: #777777;
+          "
+        >
+          سلة مشترياتك فارغة حالياً! 🛍️
+        </div>
+      </div>
+
+      <!-- صندوق الفاتورة الجانبي -->
+      <div class="cart-summary">
+        <h3>ملخص الفاتورة</h3>
+        <div
+          class="flex-space"
+          style="margin: 20px 0; font-size: 18px; font-weight: bold"
+        >
+          <span>المجموع الإجمالي:</span>
+          <span id="total-price">$0.00</span>
+        </div>
+        <button class="checkout-btn">التوجه لإتمام الدفع ✨</button>
+        <div class="link" style="margin-top: 20px">
+          <a
+            href="./index.html"
+            style="width: 100%; display: block; text-align: center"
+            >العودة للمتجر</a
+          >
+        </div>
+      </div>
+    </main>
+
+    <!-- كود التشغيل والحسابات البرمجية المدقق والمحمي -->
+    <script>
+      function renderCart() {
+        // جلب البيانات من الذاكرة
+        let cartItems = JSON.parse(localStorage.getItem("ultimo_cart")) || [];
+
+        const tbody = document.getElementById("cart-items-tbody");
+        const table = document.getElementById("cart-table");
+        const emptyMessage = document.getElementById("empty-cart-message");
+        const totalPriceElement = document.getElementById("total-price");
+        const headerCount = document.querySelector(".cart-count");
+
+        // 1. تحديث العداد العلوي في الصفحة
+        if (headerCount) {
+          headerCount.textContent = cartItems.length;
+        }
+
+        // 2. التحقق مما إذا كانت السلة فارغة
+        if (cartItems.length === 0) {
+          table.style.display = "none";
+          emptyMessage.style.display = "block";
+          totalPriceElement.textContent = "$0.00";
+          return;
+        }
+
+        // 3. بناء الجدول إذا كانت السلة ممتلئة
+        table.style.display = "table";
+        emptyMessage.style.display = "none";
+        tbody.innerHTML = ""; // مسح المحتويات القديمة لمنع التكرار
+
+        let total = 0;
+
+        cartItems.forEach((item) => {
+          // استخراج الأرقام فقط بشكل آمن من نص السعر المدخل (مثال: "$69.00" يصبح 69)
+          const numericPrice =
+            parseFloat(item.price.replace(/[^0-9.]/g, "")) || 0;
+          total += numericPrice;
+
+          // إنشاء صف جديد
+          
+
+
+const row = document.createElement('tr');
+
+row.innerHTML = `
+    <td><img src="${item.image || 'images/product1.jpg'}" class="cart-img" onerror="this.src='images/product1.jpg'"></td>
+    <td><strong>${item.name}</strong></td>
+    <td style="font-weight: 600; color: #555555;">${item.size || 'حسب الطلب'}</td>
+    <td style="color: #e02b7f; font-weight: bold;">${item.price}</td>
+    <td><button class="remove-btn" data-id="${item.id}">حذف 🗑️</button></td>
+`;
+
+tbody.appendChild(row);
+
+
+        });
+
+        // عرض المجموع النهائي
+        totalPriceElement.textContent = `$${total.toFixed(2)}`;
+
+        // 4. ربط أحداث الحذف بالأزرار الجديدة بعد رسمها مباشرة
+        addRemoveEvents();
+      }
+
+      // دالة لإضافة حدث الحذف لكل زر بعد ظهوره في الجدول
+      function addRemoveEvents() {
+        const removeButtons = document.querySelectorAll(".remove-btn");
+        removeButtons.forEach((button) => {
+          button.onclick = function () {
+            const idToRemove = parseFloat(this.getAttribute("data-id"));
+            removeItem(idToRemove);
+          };
+        });
+      }
+
+      // دالة حذف منتج معين بالاعتماد على الـ id
+      function removeItem(id) {
+        let cartItems = JSON.parse(localStorage.getItem("ultimo_cart")) || [];
+
+        // فلترة وحذف العنصر المطلوب
+        cartItems = cartItems.filter((item) => item.id !== id);
+
+        // إعادة الحفظ في الذاكرة المحلية
+        localStorage.setItem("ultimo_cart", JSON.stringify(cartItems));
+
+        // إعادة رسم الجدول بالفاتورة الجديدة فوراً
+        renderCart();
+      }
+
+      // تشغيل المنظومة تلقائياً عند تحميل الصفحة
+      window.onload = function () {
+        renderCart();
+      };
+    </script>
+  </body>
+</html>

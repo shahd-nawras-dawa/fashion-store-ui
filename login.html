@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول - متجر ألتيمو</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- استدعاء الأيقونات الفخمة -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body>
+
+    <!-- الحاوية الكبرى التي تجمع النصفين معاً -->
+    <div class="auth-page-container">
+        
+        <!-- 📸 النصف الأيمن: قسم الصورة المحلية الفخمة (مشترك ومتناسق) -->
+        <div class="auth-image-side">
+            <div class="image-overlay">
+                <h2>أهلاً بكِ مجدداً في ألتيمو</h2>
+                <p>سجلي دخولكِ لتتابعي أحدث العروض وتستعرضي سلة مشترياتكِ المفضلة.</p>
+            </div>
+        </div>
+
+        <!-- ✍️ النصف الأيسر: قسم نموذج تسجيل الدخول (الفورم) -->
+        <div class="auth-form-side">
+            <form class="modern-auth-form">
+                <h1>تسجيل الدخول</h1>
+                <p class="form-subtitle">مرحباً بكِ! يرجى إدخال بريدكِ وكلمة المرور للوصول لحسابكِ</p>
+
+                <div class="input-group">
+                    <label>البريد الإلكتروني</label>
+                    <input type="email" name="user_email" placeholder="example@mail.com" required>
+                </div>
+
+                <div class="input-group">
+                    <label>كلمة المرور</label>
+                    <input type="password" name="user_password" placeholder="••••••••••••" required>
+                </div>
+
+                <input type="submit" value="تسجيل الدخول الآن">
+
+                <div class="modern-auth-links">
+                    <a href="register.html" class="switch-link">ليس لديكِ حساب؟ <span>أنشئي حساباً الآن</span></a>
+                    <a href="index.html" class="back-home">🏠 العودة للصفحة الرئيسية للمتجر</a>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+
+    <!-- 🔐 كود التحقق الذكي والمحمي من حقول تسجيل الدخول -->
+    <script>
+        // 1. الإمساك بالفورم (النموذج) الخاص بالحسابات باستخدام الكلاس الخاص به
+        const loginForm = document.querySelector('.modern-auth-form form');
+
+        if (loginForm) {
+            // 2. التصنت لحدث "الإرسال" (submit) عندما يضغط الزبون على زر الدخول
+            loginForm.addEventListener('submit', function(event) {
+                
+                // 3. الإمساك بصناديق الإدخال (البريد وكلمة المرور) بالداخل
+                const emailInput = loginForm.querySelector('input[type="email"]');
+                const passwordInput = loginForm.querySelector('input[type="password"]');
+
+                // 4. استخراج القيم المكتوبة ومسح الفراغات الزائدة (.trim)
+                const emailValue = emailInput.value.trim();
+                const passwordValue = passwordInput.value;
+
+                // 5. الفحص المنطقي الذكي:
+                // أ) هل حقل البريد فارغ؟
+                // ب) هل كلمة المرور فارغة أو طولها أقل من 6 أحرف؟
+                if (emailValue === "" || passwordValue === "" || passwordValue.length < 6) {
+                    
+                    // 🌟 الـ Magic هنا: منع المتصفح من إرسال البيانات وإيقاف تحديث الصفحة
+                    event.preventDefault(); 
+                    
+                    // تنبيه الزبون بالخطأ
+                    alert("❌ خطأ: يرجى إدخال بريد إلكتروني صحيح، وكلمة مرور لا تقل عن 6 أحرف!");
+                }
+            });
+        }
+    </script>
+</body>
+
+
+</body>
+
+
+</html>
